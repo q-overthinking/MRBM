@@ -1,4 +1,6 @@
 A simple MBR management utility written in Rust
+## How to build?
+`cargo build --release`
 ## How to use?
 ```
 Usage: mbrm [OPTIONS] --input <INPUT>
