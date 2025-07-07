@@ -23,7 +23,11 @@ fn main() -> Result<()> {
         .chunks(args.chunk_symbols);
     for (index, chunk) in mbr_data.enumerate() {
         let hex_dump_offset = index * args.chunk_symbols;
-        writeln!(io::stdout(), "{}:\t{}", if !args.no_color { format!("0x{:0>5x}",hex_dump_offset).red().bold() } else { format!("0x{:0>5x}",hex_dump_offset).bold() }, chunk
+        writeln!(io::stdout(), "{}:\t{}", if !args.no_color { 
+            format!("0x{:0>5x}",hex_dump_offset).red().bold() 
+        } else { 
+            format!("0x{:0>5x}",hex_dump_offset).bold() 
+        }, chunk
             .iter()
             .enumerate()
             .map(|(byte_index, &x)| { 
@@ -47,8 +51,16 @@ fn main() -> Result<()> {
     }
     if args.blake3 {
         let blake3_checksum = blake3::hash(&buffer).to_string();
-        writeln!(io::stdout(), "blake3: {}", if !args.no_color { blake3_checksum.red().bold() } else { blake3_checksum.bold() })?;
+        writeln!(io::stdout(), "blake3: {}", if !args.no_color { 
+            blake3_checksum.red().bold() 
+        } else { 
+            blake3_checksum.bold() 
+        })?;
     }
-    writeln!(io::stdout(), "read {} bytes.", if !args.no_color { bytes_read.bold().red() } else { bytes_read.bold() })?;
+    writeln!(io::stdout(), "read {} bytes.", if !args.no_color {
+        bytes_read.bold().red()
+    } else { 
+        bytes_read.bold()
+    })?;
     Ok(())
 } 
