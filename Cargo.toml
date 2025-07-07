@@ -1,0 +1,15 @@
+[package]
+name = "mbrm"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.98"
+blake3 = "1.8.2"
+clap = { version = "4.5.40", features = ["derive"] }
+colored = "3.0.0"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
