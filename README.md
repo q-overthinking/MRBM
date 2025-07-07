@@ -9,4 +9,5 @@ Options:
   -o, --output <OUTPUT>                Writes MBR data to given path
   -n, --no-color                       Removes color from MBR hex dump
   -h, --help                           Print help
-  -V, --version                        Print version```
+  -V, --version                        Print version
+```
