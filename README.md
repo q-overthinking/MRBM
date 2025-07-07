@@ -1,5 +1,4 @@
-## What is this?
-# A simple MBR management utility written in Rust
+A simple MBR management utility written in Rust
 ## How to use?
 Usage: mbrm [OPTIONS] --input <INPUT>
 
