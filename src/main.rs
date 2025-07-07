@@ -20,9 +20,9 @@ fn main() -> Result<()> {
         return Ok(())
     }
     let mbr_data = &mut buffer
-        .chunks(args.chunk_symbols);
+        .chunks(args.chunk_bytes);
     for (index, chunk) in mbr_data.enumerate() {
-        let hex_dump_offset = index * args.chunk_symbols;
+        let hex_dump_offset = index * args.chunk_bytes;
         writeln!(io::stdout(), "{}:\t{}", if !args.no_color { 
             format!("0x{:0>5x}",hex_dump_offset).red().bold() 
         } else { 
