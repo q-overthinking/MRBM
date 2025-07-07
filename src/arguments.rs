@@ -12,8 +12,8 @@ pub struct Args {
     #[arg(short, long)]
     pub input: String,
 
-    #[arg(short, long, default_value_t = 16, help = "Set amount of symbols in one chunk")]
-    pub chunk_symbols: usize,
+    #[arg(short, long, default_value_t = 16, help = "Set amount of bytes in one chunk")]
+    pub chunk_bytes: usize,
 
     #[arg(short, long, help = "Print blake3 checksum at the end of output")]
     pub blake3: bool,
