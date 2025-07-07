@@ -4,7 +4,7 @@ A simple MBR management utility written in Rust
 Usage: mbrm [OPTIONS] --input <INPUT>
 Options:
   -i, --input <INPUT>                  
-  -c, --chunk-symbols <CHUNK_SYMBOLS>  Sets amount of symbols in one chunk [default: 16]
+  -c, --chunk-symbols <CHUNK_SYMBOLS>  Sets amount of bytes in one chunk [default: 16]
   -b, --blake3                         Prints blake3 MBR checksum at end of output
   -o, --output <OUTPUT>                Writes MBR data to given path
   -n, --no-color                       Removes color from MBR hex dump
